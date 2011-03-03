@@ -1,0 +1,19 @@
+<div class="slide cover title"> 
+    <object data="graphics/web.svg" width="300px" height="300px"
+	    type="image/svg+xml"
+	    preserveAspectRatio="meet"
+	    codebase="http://www.adobe.com/svg/viewer/install" 
+	    class="cover">
+    </object>
+    <br clear="all" /> 
+
+    <h1>Fundamentos básicos del diseño Web: HTML y CSS</h1> 
+
+    <p><a href="http://es.linkedin.com/in/sortega">Sebastián Ortega</a>,
+        &lt;<a href="mailto:sortega@fi.upm.es">sortega@fi.upm.es</a>&gt;<br /> 
+        <br /> 
+        <br /> 
+        <br /> 
+	<br /><em>Curso de técnico en diseño y mantenimiento de sitios y
+	aplicaciones Web</em></p> 
+</div> 
