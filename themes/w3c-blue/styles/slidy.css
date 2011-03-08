@@ -159,7 +159,7 @@ div.toc-heading {
   text-align: center;
 }
 
-pre {
+pre, .example {
  font-size: 80%;
  font-weight: bold;
  line-height: 120%;
@@ -223,7 +223,7 @@ div dd
 }
 
 
-p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table {
+p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table,div.example {
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -417,7 +417,8 @@ div.notes li {
 
   div.slide h1 { margin-right: 0px; padding-right: 0px; }
 
-  div.slide pre { font-size: 60%; padding-left: 0.5em; }
+  div.slide pre,
+  div.slide div.example { font-size: 60%; padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
   div.background { display: none; visibility: hidden; }

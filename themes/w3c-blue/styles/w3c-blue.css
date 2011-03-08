@@ -485,3 +485,10 @@ div.comment { display: none; visibility: hidden }
  div.slide.cover h1 { background: transparent; color: black }
  div.comment { display: block; visibility: visible } 
 }
+
+/* Code examples */
+div.example {
+    color: black;
+    border-color: #95D0AB;
+    background-color: #E4E7E5;
+}
