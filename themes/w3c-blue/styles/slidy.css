@@ -371,6 +371,32 @@ div.initial_prompt { display: none; visibility: hidden }
      border-top-color: black;
   }
 
+div.notes {
+    padding: 5px;
+    border: 1px solid #728EC2;
+    font-size: 80%;
+    font-style: italic;
+    text-align: justify;
+    margin: 4px;
+}
+div.notes.hidden {
+    display: none;
+}
+
+.single_slide div.notes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.notes li {
+    list-style-type: circle;
+    list-style-image: none;
+    background: none;
+    padding: 2px;
+}
+
 @media screen {
   .hidden { display: none; visibility: visible }
 
@@ -389,6 +415,8 @@ div.initial_prompt { display: none; visibility: hidden }
 @media print {
   .hidden { display: block; visibility: visible }
 
+  div.slide h1 { margin-right: 0px; padding-right: 0px; }
+
   div.slide pre { font-size: 60%; padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
@@ -396,5 +424,7 @@ div.initial_prompt { display: none; visibility: hidden }
   div.slide { page-break-before: always }
   /* :first-child isn't reliable for print media */
   div.slide.first-slide { page-break-before: avoid }
+  div.notes {display: block; visibility: visible; position: static; }
+  div.notes.hidden {display: none;}
 }
 

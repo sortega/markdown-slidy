@@ -161,24 +161,6 @@ div.hbox {
   clear:both;
 }
 
-/* styling for named background */
-div.background.slanty {
-  z-index: 2;
-  bottom: 0; 
-  height: 100%;
-  background: transparent;
-}
-
-div.background.slanty img { margin-top: 4em; width: 100%; height: 80% }
-
-/* the following makes the pre background translucent */
-/* opacity is a CSS3 property but supported by Mozilla family */
-/* filter is an IE specific feature that also requires width */
-div.slide.slanty pre {
-  width: 93%;  /* needed for IE filter to work */
-  opacity: .8;
-  filter: alpha(opacity=80);
-}
 
 img.withBorder {
   border: 2px solid #c60;
@@ -275,6 +257,7 @@ ul li {
   padding: 0 0 0 40px;
   background: transparent url(../graphics/bullet.png) no-repeat 5px 0.3em;
   line-height: 140%;
+  text-align: justify;
 }
 
 /* workaround IE's failure to support background on li for print media */
@@ -284,6 +267,7 @@ ol li {
   margin: 0.1em 0em 0.6em 1.5em;
   padding: 0 0 0 0px;
   line-height: 140%;
+  text-align: justify;
 }
 
 li li { 
@@ -495,7 +479,8 @@ object.cover {
 div.comment { display: none; visibility: hidden }
 
 @media print {
- div.slide h1 { background: transparent; color: black }
+ div.slide h1 { background: transparent; color: black; width: 100%;
+ padding-right: 0px; padding-left: 0px;}
  div.slide.cover { background: transparent; color: black }
  div.slide.cover h1 { background: transparent; color: black }
  div.comment { display: block; visibility: visible } 

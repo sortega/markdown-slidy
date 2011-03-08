@@ -42,7 +42,9 @@ var w3c_slidy = {
   outline: null, // outline element with the focus
   selected_text_len: 0, // length of drag selection on document
   view_all: 0,  // 1 to view all slides + handouts
-  want_toolbar: true,  // user preference to show/hide toolbar
+  want_toolbar: false,  // user preference to show/hide toolbar
+  want_initial_prompt: false,  // user preference to show the initial prompt
+  want_notes: false, // user preference to show presenter notes
   mouse_click_enabled: true, // enables left click for next slide
   scroll_hack: 0, // IE work around for position: fixed
   disable_slide_click: false,  // used by clicked anchors
@@ -92,6 +94,22 @@ var w3c_slidy = {
     window.resizeBy(0, 1);
   },
 
+  init_notes: function() {
+    if (!w3c_slidy.want_notes)
+    {
+        for (var i=0; i < w3c_slidy.slides.length; i++) {
+            var slide = w3c_slidy.slides[i];
+            var divs = slide.getElementsByTagName("div");
+            for (var j=0; j < divs.length; j++) {
+                var div = divs[j];
+                if (div.className == "notes") {
+                   this.add_class(div, "hidden"); 
+                }
+            }
+        }
+    }
+  },
+
   init: function () {
     //alert("slidy starting test 10");
     document.body.style.visibility = "visible";
@@ -139,6 +157,8 @@ var w3c_slidy = {
     this.toc = this.table_of_contents();
 
     this.add_initial_prompt();
+
+    this.init_notes();
 
     // bind event handlers without interfering with custom page scripts
     // Tap events behave too weirdly to support clicks reliably on
@@ -741,35 +761,38 @@ var w3c_slidy = {
   },
 
   add_initial_prompt: function () {
-    var prompt = this.create_element("div");
-    prompt.setAttribute("class", "initial_prompt");
+    if (w3c_slidy.want_initial_prompt)
+    {
+        var prompt = this.create_element("div");
+        prompt.setAttribute("class", "initial_prompt");
 
-    var p1 = this.create_element("p");
-    prompt.appendChild(p1);
-    p1.setAttribute("class", "help");
+        var p1 = this.create_element("p");
+        prompt.appendChild(p1);
+        p1.setAttribute("class", "help");
 
-    if (this.keyboardless)
-      p1.innerHTML = "Tap footer to move to next slide";
-    else
-      p1.innerHTML = "Space or Right Arrow to move to next " +
-                     "slide, click help below for more details";
+        if (this.keyboardless)
+          p1.innerHTML = "Tap footer to move to next slide";
+        else
+          p1.innerHTML = "Space or Right Arrow to move to next " +
+                         "slide, click help below for more details";
 
-    this.add_listener(prompt, "click", function (e) {
-      document.body.removeChild(prompt);
-      w3c_slidy.stop_propagation(e);
-    
-      if (e.cancel != undefined)
-        e.cancel = true;
-      
-      if (e.returnValue != undefined)
-        e.returnValue = false;
-      
-      return false;
-    });
+        this.add_listener(prompt, "click", function (e) {
+          document.body.removeChild(prompt);
+          w3c_slidy.stop_propagation(e);
+        
+          if (e.cancel != undefined)
+            e.cancel = true;
+          
+          if (e.returnValue != undefined)
+            e.returnValue = false;
+          
+          return false;
+        });
 
-    document.body.appendChild(prompt);
-    this.initial_prompt = prompt;
-    setTimeout(function() {document.body.removeChild(prompt);}, 5000);
+        document.body.appendChild(prompt);
+        this.initial_prompt = prompt;
+        setTimeout(function() {document.body.removeChild(prompt);}, 5000);
+    }
   },
 
   add_toolbar: function () {
@@ -1665,6 +1688,10 @@ var w3c_slidy = {
       }
 
       w3c_slidy.remove_class(w3c_slidy.toolbar, "hidden");
+    }
+    else
+    {
+       w3c_slidy.hide_toolbar(); 
     }
 
     w3c_slidy.scrollhack = 0;
