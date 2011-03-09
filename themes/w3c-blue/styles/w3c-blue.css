@@ -37,7 +37,7 @@ div.slide {
   left: 0;
   right: 0;
   line-height: 120%;
-  background-color: transparent;
+  background: transparent url("../graphics/conwet.png") no-repeat bottom right;
 }
 
 div.background {
@@ -63,15 +63,8 @@ div.background img {
 div.slide + div[class].slide { page-break-before: always;}
 
 div.slide h1 {
-    color: #728ec2;
-}
-body.single_slide div.slide h1 {
-    color: white;
-}
-
-div.slide h1 {
+  color: #728EC2;
   padding-left: 3em;
-  padding-right: 7em;
   padding-top: 0.2em;
   margin-bottom: 0.8em;
   margin-top: -0.05em;
@@ -81,6 +74,17 @@ div.slide h1 {
   height: 2.2em;
   font-size: 160%;
   line-height: 1.1em;
+}
+
+.single_slide div.slide h1 {
+    color: white; 
+    background: #728EC2 url('../graphics/icon-blue-big.png') 0.2em 0.2em no-repeat;
+}
+
+@media print {
+.single_slide div.slide h1, div.slide h1 {
+    color: white; 
+}
 }
 
 div.slide h1 a {
@@ -169,7 +173,7 @@ img.withBorder {
 
 li pre { margin-left: 0; }
 
-@media print { pre { font-size: 60% } }
+@media print { pre { font-size: 60% } }*/
 
 blockquote { font-style: italic }
 
@@ -220,6 +224,10 @@ p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table {
   margin-right: 1em;
 }
 
+h2, h3, h4 {
+  color: #728EC2;
+}
+
 p.subhead { font-weight: bold; margin-top: 2em; }
 
 div.cover p.explanation {
@@ -261,7 +269,8 @@ ul li {
 }
 
 /* workaround IE's failure to support background on li for print media */
-@media print { ul li { list-style: disc; padding-left: 0; background: none; } }
+/*@media print { ul li { list-style: disc; padding-left: 0; background: none; }
+ * }*/
 
 ol li { 
   margin: 0.1em 0em 0.6em 1.5em;
@@ -437,6 +446,7 @@ div.slide.cover h1 {
   padding: 0.5em;
   color: white;
   height: auto;
+  background: none;
 }
 
 div.slide.cover h2 {
@@ -459,8 +469,8 @@ div.slide.cover a:hover, div.slide.cover a:active {
 div.slide.cover img.cover {
    margin: 0 0 0 0;
    float: right;
-   padding-bottom: 4em;
-   width: 50%;
+   padding-bottom: 2.5em;
+   height: 10em;
    overflow: hidden;
 }
 
@@ -479,9 +489,12 @@ object.cover {
 div.comment { display: none; visibility: hidden }
 
 @media print {
- div.slide h1 { background: transparent; color: black; width: 100%;
- padding-right: 0px; padding-left: 0px;}
- div.slide.cover { background: transparent; color: black }
- div.slide.cover h1 { background: transparent; color: black }
  div.comment { display: block; visibility: visible } 
+}
+
+/* Code examples */
+div.example {
+    color: black;
+    border-color: #95D0AB;
+    background-color: #E4E7E5;
 }

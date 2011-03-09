@@ -159,7 +159,7 @@ div.toc-heading {
   text-align: center;
 }
 
-pre {
+pre, .example {
  font-size: 80%;
  font-weight: bold;
  line-height: 120%;
@@ -223,7 +223,7 @@ div dd
 }
 
 
-p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table {
+p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table, div.example {
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -414,16 +414,29 @@ div.notes li {
 
 @media print {
   .hidden { display: block; visibility: visible }
+  div.slide {
+      font-size: 16pt;
+  }
+   
+  div.slide h1 {
+        padding-right: 0px;
+        margin-right: 0px;
+  }
+  div.slide pre,
+  div.slide div.example { font-size: 60%; padding-left: 0.5em; }
 
-  div.slide h1 { margin-right: 0px; padding-right: 0px; }
-
-  div.slide pre { font-size: 60%; padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
+  div.slide { page-break-before: always } 
   div.background { display: none; visibility: hidden; }
-  div.slide { page-break-before: always }
-  /* :first-child isn't reliable for print media */
-  div.slide.first-slide { page-break-before: avoid }
+  div.slide {
+    size: landscape;
+    margin: 0px auto !important;
+    border: 2px solid #728EC2 !important;
+    overflow: hidden !important;
+    height: 16.2cm !important;
+  }
+div.slide.first-slide { page-break-before: avoid }
   div.notes {display: block; visibility: visible; position: static; }
   div.notes.hidden {display: none;}
 }

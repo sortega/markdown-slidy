@@ -1,18 +1,26 @@
-HTML básico
-===========
+Transparencia 1
+===============
 
-El html es una sopa de tags con texto entre medias
+* Contenido
+* Contenido
+
+## Titulo 2 ##
 
 ~~~~ {.html }
 <html>
-Cosas
+Codigo
 </html>
 ~~~~
 
-HTML avanzado
-=============
+<div class="example">
+Un ejemplo
+</div>
 
-Le ponemos doctype...
 
- * Un doctype es un señor muy serio { .incremental }
- * Si no lo satisfaces llama a su primo del W3c
+Transparencia 2
+===============
+
+* Nivel 1
+    + Nivel 2
+        - Nivel 3
+* Nivel 1

@@ -16,10 +16,3 @@
 	</script> 
     </head> 
     <body> 
-	<div class="background">
-	    <img alt="" id="head-icon"
-		src="themes/w3c-blue/graphics/icon-blue.png" />
-	    <img alt="W3C logo" id="head-logo" 
-		src="graphics/conwet-logo.png" />
-	</div> 
-
