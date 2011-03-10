@@ -386,10 +386,11 @@ div.notes.hidden {
 }
 
 .single_slide div.notes {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 div.notes li {
@@ -423,19 +424,15 @@ div.notes li {
   div.slide {
       font-size: 16pt;
   }
-
   div.slide.cover {
       font-size: 14pt;
   }
-   
   div.slide h1 {
         padding-right: 0px;
         margin-right: 0px;
         font-size: 150% !important;
   }
-
   div.slide h1 { margin-right: 0px; padding-right: 0px; }
-
   div.slide pre,
   div.slide div.example { font-size: 60%; }
   div.slide pre { padding-left: 0.5em; }
@@ -445,12 +442,21 @@ div.notes li {
   div.background { display: none; visibility: hidden; }
   div.slide {
     margin: 0px auto !important;
-    overflow: hidden !important;
     height: 15cm !important;
     width: 20cm !important;
+    position: relative;
   }
-div.slide.first-slide { page-break-before: avoid }
-  div.notes {display: block; visibility: visible; position: static; }
+  div.slide.fixed_height {
+    overflow: hidden;
+  }
+  div.slide.first-slide { page-break-before: avoid }
+  div.notes {
+    top: 15cm;
+    display: block;
+    visibility: visible;
+    position: absolute !important;
+    height: 10.5cm;
+  }
   div.notes.hidden {display: none;}
 }
 

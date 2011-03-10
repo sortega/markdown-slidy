@@ -99,6 +99,10 @@ var w3c_slidy = {
     {
         for (var i=0; i < w3c_slidy.slides.length; i++) {
             var slide = w3c_slidy.slides[i];
+
+            //FIXME: Print the slide in a fixed slide height
+            this.add_class(slide, "fixed_height");
+
             var divs = slide.getElementsByTagName("div");
             for (var j=0; j < divs.length; j++) {
                 var div = divs[j];
