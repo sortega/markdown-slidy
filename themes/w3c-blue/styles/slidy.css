@@ -425,6 +425,10 @@ div.notes li {
   div.slide pre,
   div.slide div.example { font-size: 60%; padding-left: 0.5em; }
 
+  div.slide h1 { margin-right: 0px; padding-right: 0px; }
+
+  div.slide pre,
+  div.slide div.example { font-size: 60%; padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
   div.slide { page-break-before: always } 
