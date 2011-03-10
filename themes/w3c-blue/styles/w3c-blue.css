@@ -78,11 +78,11 @@ div.slide h1 {
 
 .single_slide div.slide h1 {
     color: white; 
-    background: #728EC2 url('../graphics/icon-blue-big.png') 0.2em 0.2em no-repeat;
 }
 
 @media print {
 .single_slide div.slide h1, div.slide h1 {
+    background: #728EC2 url('../graphics/icon-blue-big.png') 0.2em 0.2em no-repeat;
     color: white; 
 }
 }

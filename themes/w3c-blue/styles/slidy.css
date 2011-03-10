@@ -161,11 +161,9 @@ div.toc-heading {
 
 pre, .example {
  font-size: 80%;
- font-weight: bold;
  line-height: 120%;
  padding-top: 0.2em;
  padding-bottom: 0.2em;
- padding-left: 1em;
  padding-right: 1em;
  border-style: solid;
  border-left-width: 1em;
@@ -175,6 +173,10 @@ pre, .example {
  border-color: #95ABD0;
  color: #00428C;
  background-color: #E4E5E7;
+}
+pre {
+ font-weight: bold;
+ padding-left: 1em;
 }
 
 li pre { margin-left: 0; }
@@ -413,6 +415,9 @@ div.notes li {
 }
 
 @media print {
+  body {
+    size: landscape;
+  }
   .hidden { display: block; visibility: visible }
   div.slide {
       font-size: 16pt;
@@ -434,7 +439,6 @@ div.notes li {
   div.slide { page-break-before: always } 
   div.background { display: none; visibility: hidden; }
   div.slide {
-    size: landscape;
     margin: 0px auto !important;
     border: 2px solid #728EC2 !important;
     overflow: hidden !important;
