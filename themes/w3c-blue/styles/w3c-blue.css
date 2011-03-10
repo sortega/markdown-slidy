@@ -15,7 +15,7 @@ body
   height: 100%;
   color: black;
   background-color: white;
-  font-family: "Gill Sans MT", "Gill Sans", GillSans, sans-serif;
+  font-family: "Trebuchet MS", Trebuchet, "Gill Sans MT", "Gill Sans", GillSans, sans-serif;
   font-size: 14pt;
 }
 
@@ -48,7 +48,7 @@ div.background {
   right: 0;
   top: 0;
   bottom: auto;
-  height: 4.1em;
+  height: 4em;
   padding: 0 0 0 0.2em;
   margin: 0 0 0 0;
   border-width: 0;
@@ -64,14 +64,13 @@ div.slide + div[class].slide { page-break-before: always;}
 
 div.slide h1 {
   color: #728EC2;
-  padding-left: 3em;
+  padding-left: 2.3em;
   padding-top: 0.2em;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
   margin-top: -0.05em;
   margin-left: 0;
   margin-right: 0;
-  min-height: 2.3em;
-  height: 2.2em;
+  height: 2em;
   font-size: 160%;
   line-height: 1.1em;
 }
@@ -82,7 +81,7 @@ div.slide h1 {
 
 @media print {
 .single_slide div.slide h1, div.slide h1 {
-    background: #728EC2 url('../graphics/icon-blue-big.png') 0.2em 0.2em no-repeat;
+    background: #728EC2 url('../graphics/icon-blue-big.png') 0.2em 0.3em no-repeat;
     color: white; 
 }
 }
@@ -442,7 +441,7 @@ div.slide.cover {
 }
 
 div.slide.cover h1 {
-  margin: 0;
+  margin: 0 0 2em 0;
   padding: 0.5em;
   color: white;
   height: auto;
@@ -490,6 +489,14 @@ div.comment { display: none; visibility: hidden }
 
 @media print {
  div.comment { display: block; visibility: visible } 
+ div.slide.cover {
+    padding-left: 0px;
+ }
+ div.slide.cover h1, div.slide.cover p {
+    margin-left: 1.7cm;
+    padding-left: 0cm;
+ }
+
 }
 
 /* Code examples */

@@ -129,7 +129,7 @@ div.slide h1 {
   margin-bottom: 0.5em;
   display: block; 
   font-size: 160%;
-  line-height: 1.2em;
+  line-height: 1.1em;
   background: transparent;
 }
 
@@ -416,33 +416,38 @@ div.notes li {
 
 @media print {
   body {
-    size: landscape;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .hidden { display: block; visibility: visible }
   div.slide {
       font-size: 16pt;
   }
+
+  div.slide.cover {
+      font-size: 14pt;
+  }
    
   div.slide h1 {
         padding-right: 0px;
         margin-right: 0px;
+        font-size: 150% !important;
   }
-  div.slide pre,
-  div.slide div.example { font-size: 60%; padding-left: 0.5em; }
 
   div.slide h1 { margin-right: 0px; padding-right: 0px; }
 
   div.slide pre,
-  div.slide div.example { font-size: 60%; padding-left: 0.5em; }
+  div.slide div.example { font-size: 60%; }
+  div.slide pre { padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
   div.slide { page-break-before: always } 
   div.background { display: none; visibility: hidden; }
   div.slide {
     margin: 0px auto !important;
-    border: 2px solid #728EC2 !important;
     overflow: hidden !important;
-    height: 16.2cm !important;
+    height: 15cm !important;
+    width: 20cm !important;
   }
 div.slide.first-slide { page-break-before: avoid }
   div.notes {display: block; visibility: visible; position: static; }
