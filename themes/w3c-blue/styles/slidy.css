@@ -378,7 +378,6 @@ div.notes {
     border: 1px solid #728EC2;
     font-size: 80%;
     font-style: italic;
-    text-align: justify;
     margin: 4px;
 }
 div.notes.hidden {
