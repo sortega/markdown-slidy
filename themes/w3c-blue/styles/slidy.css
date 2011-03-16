@@ -173,13 +173,14 @@ pre, .example {
  border-color: #95ABD0;
  color: #00428C;
  background-color: #E4E5E7;
+ font-style: normal;
 }
 pre {
  font-weight: bold;
  padding-left: 1em;
 }
 
-li pre { margin-left: 0; }
+li pre, li p { margin-left: 0; }
 
 blockquote { font-style: italic }
 
@@ -378,7 +379,6 @@ div.notes {
     border: 1px solid #728EC2;
     font-size: 80%;
     font-style: italic;
-    text-align: justify;
     margin: 4px;
 }
 div.notes.hidden {
@@ -422,7 +422,7 @@ div.notes li {
   }
   .hidden { display: block; visibility: visible }
   div.slide {
-      font-size: 16pt;
+      font-size: 13pt;
   }
   div.slide.cover {
       font-size: 14pt;
@@ -430,11 +430,14 @@ div.notes li {
   div.slide h1 {
         padding-right: 0px;
         margin-right: 0px;
-        font-size: 150% !important;
+        font-size: 190% !important;
   }
   div.slide h1 { margin-right: 0px; padding-right: 0px; }
+  div.slide h2 {
+  	font-size: 120% !important;
+  }
   div.slide pre,
-  div.slide div.example { font-size: 60%; }
+  div.slide div.example { font-size: 10pt; }
   div.slide pre { padding-left: 0.5em; }
   div.toolbar { display: none; visibility: hidden; }
   div.slidy_toc { display: none; visibility: hidden; }
