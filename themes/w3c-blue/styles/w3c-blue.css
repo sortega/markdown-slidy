@@ -37,7 +37,7 @@ div.slide {
   left: 0;
   right: 0;
   line-height: 120%;
-  background: transparent url("../graphics/conwet.png") no-repeat bottom right;
+  background: transparent url("../graphics/conwet.png") no-repeat bottom right fixed;
 }
 
 div.background {
@@ -264,7 +264,6 @@ ul li {
   padding: 0 0 0 40px;
   background: transparent url(../graphics/bullet.png) no-repeat 5px 0.3em;
   line-height: 140%;
-  text-align: justify;
 }
 
 /* workaround IE's failure to support background on li for print media */
@@ -275,7 +274,6 @@ ol li {
   margin: 0.1em 0em 0.6em 1.5em;
   padding: 0 0 0 0px;
   line-height: 140%;
-  text-align: justify;
 }
 
 li li { 
